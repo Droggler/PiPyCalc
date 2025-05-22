@@ -1,7 +1,9 @@
 import decimal
 from compare import comp
 
-decimal.getcontext().prec = 100001
+buffer = 5
+decimals = 1000000 + buffer
+decimal.getcontext().prec = decimals
 
 
 inital_a = decimal.Decimal("1")
@@ -26,8 +28,8 @@ def calc_pi():
     total_t = inital_t - (inital_p * ((inital_a - total_a) * (inital_a - total_a)))
     total_p = decimal.Decimal("2") * inital_p
     
-    for k in range(50):
-        print("Durschgang", k)
+    for k in range(20):
+        print("iteration", k)
         total_a = (total_a + total_b) / decimal.Decimal("2")
         total_b = decimal.Decimal(last_a * total_b).sqrt()
         total_t = total_t - (total_p * ((last_a - total_a) * (last_a - total_a)))
@@ -38,6 +40,7 @@ def calc_pi():
     with open("calcpi.txt", "w") as file:
         file.write(str(pi))
         if pi != 0:
-            comp()
-    
-calc_pi()
+            comp(decimals)
+
+if __name__ == "__main__":
+    calc_pi()
