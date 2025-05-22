@@ -2,7 +2,7 @@
 
 A Python-based calculator for determining a high number of decimal places of the mathematical constant Pi ($\pi$) using the Gauss-Legendre algorithm. This project also includes a feature to compare the calculated digits against a reference file for verification.
 
-## ✍️ Author
+## Author
 
 * **Droggler**
     * GitHub: `https://github.com/Droggler`
