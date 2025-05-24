@@ -1,5 +1,7 @@
 
 def comp(decimals : int):
+    """Compares the calculated Pi to a reference Pi"""
+    
     with open("calcpi.txt", "r") as file:
         calc_pi = file.read()
     with open("pi.txt", "r") as file:
